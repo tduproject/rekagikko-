@@ -5,7 +5,3 @@ from django.shortcuts import render
 
 def show(request):
     return HttpResponse("HOME")
-
-
-def sample(request):
-    return HttpResponse("test")
