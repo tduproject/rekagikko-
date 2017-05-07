@@ -1,11 +1,12 @@
-<<<<<<< HEAD
+
 from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('profiles.urls')),
-=======
+]
+
 """tdu URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -26,7 +27,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^' , include('home.urls')),
+    url(r'^', include('home.urls')),
     url(r'^register/', include('register.urls')),
->>>>>>> dev
+    url(r'^profile/', include('profiles.urls')),
 ]
