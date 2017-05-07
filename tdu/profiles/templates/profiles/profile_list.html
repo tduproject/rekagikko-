@@ -1,0 +1,9 @@
+{% extends 'profiles/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <h1><a href="{% url 'profile_detail' pk=post.pk %}">{{ post.name }}</a></h1>
+        </div>
+    {% endfor %}
+{% endblock content %}
