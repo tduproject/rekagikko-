@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'profiles',
     'home',
     'register',
+
 ]
 
 MIDDLEWARE = [
@@ -113,7 +115,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -121,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 # Email
 
 EMAIL_USE_TLS = True
@@ -128,3 +131,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'kagikko1234@gmail.com'
 EMAIL_HOST_PASSWORD = '098f6bcd4621d373cade4e832627b4f6'
 EMAIL_PORT = 587
+=======
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+>>>>>>> dev

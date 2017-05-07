@@ -1,0 +1,12 @@
+{#{% extends 'profiles/base.html' %}#}
+
+{% block content %}
+
+    <a class="btn btn-default" href="{% url 'profile_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <h1>Your Profile</h1>
+    <p>名前: {{ post.name }}</p>
+    <p>学年: {{ post.grade }}</p>
+    <p>学系: {{ post.major }}</p>
+    <p>コメント: {{ post.text }}</p>
+
+{% endblock %}
