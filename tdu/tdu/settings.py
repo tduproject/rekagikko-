@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'profiles',
     'home',
-    'register',
     'accounts',
 
 ]
@@ -134,6 +133,3 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'kagikko1234@gmail.com'
 EMAIL_HOST_PASSWORD = '098f6bcd4621d373cade4e832627b4f6'
 EMAIL_USE_TLS = True
-
-
-
