@@ -39,10 +39,19 @@ class RegisterForm(UserCreationForm):
 
     def clean_username(self):
         username = self.cleaned_data["username"]
-        try:
-            validate_email(username)
-        except ValidationError:
+        atmark = username.find('@')
+        string = username.find("dendai.ac.jp")
+
+        if(atmark < 0):
             raise ValidationError("正しいメールアドレスを指定してください。")
+
+        if(atmark > string and string < 0):
+            raise ValidationError("電大メールを入力してください")
+
+        # try:
+        #     validate_email(username)
+        # except ValidationError:
+        #     raise ValidationError("正しいメールアドレスを指定してください。")
 
         try:
             self.user = User.objects.get(username=username)
