@@ -11,6 +11,7 @@ from django.template.loader import get_template
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views import generic
+from profiles.models import UserProfile
 
 from .forms import (
     RegisterForm,
@@ -82,6 +83,12 @@ class CreateCompleteView(generic.TemplateView):
         if user and not user.is_active and default_token_generator.check_token(user, token):
             user.is_active = True
             user.save()
+            createprofile = UserProfile()
+            createprofile.name = user.first_name
+            createprofile.email = user.email
+            createprofile.save()
+
+
             return super(CreateCompleteView, self).get(request, **kwargs)
         else:
             raise Http404
