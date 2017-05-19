@@ -1,0 +1,38 @@
+{% extends 'app/base.html' %}
+{% block content %}
+  <form action='{% url "app:csv_import" %}' method='POST' enctype="multipart/form-data">
+    <h2>CSVインポート</h2>
+    <input type='file' name='csv'>
+    <input type="submit" value="送信する">
+    {% csrf_token %}
+  </form>
+  <hr>
+  <form action='{% url "app:csv_export" %}' method='POST' enctype="multipart/form-data">
+    <h2>CSVエクスポート</h2>
+    <input type="submit" value="エクスポート">
+    {% csrf_token %}
+  </form>
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>曜日</th>
+        <th>時間</th>
+        <th>科目名</th>
+        <th>カテゴリ</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in post_list %}
+      <tr>
+        <td>{{ post.pk }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.text }}</td>
+        <td>{{ post.sub }}</td>
+        <td>{{ post.category.name }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
