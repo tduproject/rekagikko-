@@ -25,7 +25,7 @@ SECRET_KEY = '5wj745vop@*wd-y5dps-e3ixv2s3iq10^ko3e7v)7enxu+d1wy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kagikko.rd.dendai.ac.jp']
 
 
 # Application definition
