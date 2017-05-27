@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>BullentinBoard</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'list' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="{% url 'list' %}">BullentinBoard</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                  <h2>send form</h2>
+                    <form method="POST" class="post-form">
+                      {% csrf_token %}
+                      科目名：{{ form.subject }}<br>
+                      投稿者名：{{ form.name }}<br>
+                      メッセージ:{{ form.message }}<br>
+                      <button type="submit" class="save btn btn-default">投稿</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
