@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head lang="ja">
+  <meta charset="UTF-8">
+  <title>Bulletin Board</title>
+</head>
+<body>
+  <div class="container">
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="page-header">
+      <h1><a href="{% url 'list' %}">BulletinBoard</a></h1>
+      <h2><a href="{% url 'create' %}">Open Thread</a></h2>
+    </div>
+    <h2>list pages(Thread Lists)</h2>
+    {% for post in posts %}
+      {% if post.pk <= 10 %}
+        <div>
+            <h3><a href="{% url 'index' pk=post.pk %}">{{ post.subject }}
+            </a></h3>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</body>
+</html>
+
+<!-- <input type="hidden" name="hoge[hoge_key]" value="1" />
+-->
